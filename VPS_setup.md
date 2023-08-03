@@ -102,7 +102,8 @@ Select "MobaKeyGen (SSH Key generator)"
 
 Select Generate <-- Move your mouse until the generate is complete
 
-Copy the content of the key to a file on your PC/Laptop example (don't press the Save public key this will not work!) create a file C:\Key\Public.key and then paste the content
+Copy the content of the key to a file on your PC/Laptop example (don't press the Save public key this will not work!) create a file C:\Key\Public.key and then paste the content.
+
 (like this below,. SO DO NOT USE THIS !!!)
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJXTjI5gozMN8XmFwIdC76h8zv/tDc5l5kLNdaplEgpRtcrVj+zJZ1/IT/L1gUWGZbrat/UoCD0eIdXi5o7GwXrBszkIoQA26GN5MNmvZU/JQSWDwfaXzCI1rYnZxXCXf+eRThBfdW8rHzXEiG9bvsq9ppz7T75pB5Pv6Qem/lzuiUm3wbvh4wpCkMkBDLepyAXOBGu4T+sARCPkoW4In4fP1pMzzkRqMhXCLnFPhqY692kSsChXbeIeuVls5iBnf55jM5ZJKIOFebdxZNoSkb4/nq7VepzrByWeoYcjfZM8/ZjZ0EBd8DmFgpTD0AQBqwc3oZUo+sikyFoFUDkJNp rsa-key-20230711
