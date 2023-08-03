@@ -6,7 +6,7 @@ More info on how to install WSL on Windows can be found here: https://learn.micr
 
 :penguin: Running Linux dockers to add functions like the habbo imager, on busy hotels they can use NGINX Proxy manager
 
-:punch: Better support for running ARC or any other emulator as a Linux service
+:punch: Better support for running Morningstar or any other emulator as a Linux service
 
 :speedboat: We see much better performance on Linux than on Windows, especially the CMS
 
