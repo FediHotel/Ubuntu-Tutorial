@@ -70,36 +70,36 @@ yarn build:prod
 ```
 ```shell
 cd /source/nitro/build
-mkdir /var/www/retrohotel/Gamedata/Client
-cp -r * /var/www/retrohotel/Gamedata/Client
-vi /var/www/retrohotel/CMS/src/App/Config.php
+mkdir /var/www/Client
+cp -r * /var/www//Client
+vi /var/www/atomcms/.env
 ```
-in the editor edit the : ```nitro_path``` to look like:
+in the editor edit the : ```NITRO_CLIENT_PATH``` to look like:
 ```ini
-"nitro_path"                  => "https://###YOUR Domain or IP/client",
+NITRO_CLIENT_PATH=/client
 ```
 
 ```shell
-mkdir /var/www/retrohotel/Gamedata/effect
-mkdir /var/www/retrohotel/Gamedata/clothes
-mkdir /var/www/retrohotel/Gamedata/furniture
-mkdir /var/www/retrohotel/Gamedata/pets
-mkdir /var/www/retrohotel/Gamedata/icons
-mkdir /var/www/retrohotel/Gamedata/sounds
-mkdir /var/www/retrohotel/Gamedata/c_images/catalogue
+mkdir /var/www/Gamedata/effect
+mkdir /var/www/Gamedata/clothes
+mkdir /var/www/Gamedata/furniture
+mkdir /var/www/Gamedata/pets
+mkdir /var/www/Gamedata/icons
+mkdir /var/www/Gamedata/sounds
+mkdir /var/www/Gamedata/c_images/
+mkdir /var/www/Gamedata/c_images/catalogue
 ```
 
 If you got the [The All 1 one Nitro Converter](https://git.krews.org/duckietm/converter)
 You can copy over the following:
-- C:\tools\Convert\assets\bundled\effect --> /var/www/retrohotel/Gamedata/effect
-- C:\tools\Convert\assets\bundled\figure --> /var/www/retrohotel/Gamedata/clothes
-- C:\tools\Convert\assets\bundled\furniture --> /var/www/retrohotel/Gamedata/furniture
-- C:\tools\Convert\assets\bundled\pets --> /var/www/retrohotel/Gamedata/pets
-- C:\tools\Convert\assets\bundled\Furni_Icons  --> /var/www/retrohotel/Gamedata/icons
-- C:\tools\DownloadHabbo\mp3  --> /var/www/retrohotel/Gamedata/sounds
-- C:\tools\DownloadHabbo\badges  --> /var/www/retrohotel/Gamedata/c_images/album1584
-- [Default asstes](https://git.krews.org/duckietm/ubuntu-tutorial/-/blob/main/Config/default_gamedata.zip) --> /var/www/retrohotel/Gamedata/
-- [Catalogue asstes] (https://git.krews.org/Ultra/CompleteAMSCatalogue/-/tree/master/SWF/catalogue) --> /var/www/retrohotel/Gamedata/c_images/catalogue
+- C:\tools\Convert\assets\bundled\effect --> /var/www/Gamedata/effect
+- C:\tools\Convert\assets\bundled\figure --> /var/www/Gamedata/clothes
+- C:\tools\Convert\assets\bundled\furniture --> /var/www/Gamedata/furniture
+- C:\tools\Convert\assets\bundled\pets --> /var/www/Gamedata/pets
+- C:\tools\Convert\assets\bundled\Furni_Icons  --> /var/www/Gamedata/icons
+- C:\tools\DownloadHabbo\mp3  --> /var/www/Gamedata/sounds
+- C:\tools\DownloadHabbo\badges  --> /var/www/Gamedata/c_images/album1584
+- [Default asstes] Add-ons/default_gamedata.zip --> /var/www/retrohotel/Gamedata/
 
 # Setup the websocket
 
