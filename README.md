@@ -15,8 +15,7 @@ When starting from scratch, this would be the recomended order :
 2. Atom Setup  
 3. Imager and Gamedata setup  
 4. Cloudflare and SSL setup  
-5. Cloudlfare RealIP setup  
-6. Emulator setup  
+5. Emulator setup  
 6. Nitro and settings setup  
 
 **Big Thanks to:**  
