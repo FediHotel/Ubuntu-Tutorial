@@ -2,15 +2,15 @@ Install a fresh copy of Ubuntu Server (22.04 is the current stable release and w
 
 More info on how to install WSL on Windows can be found here: https://learn.microsoft.com/en-us/windows/wsl/install For running a Retro hotel I do recommend using a Linux operating system as this has more advantages than the Windows platform. Example :
 
-NGINX is built for Linux systems and has been ported to Windows but will perform less due to the file system.
+:earth_americas: NGINX is built for Linux systems and has been ported to Windows but will perform less due to the file system.
 
-Running Linux dockers to add functions like the habbo imager, on busy hotels they can use NGINX Proxy manager
+:penguin: Running Linux dockers to add functions like the habbo imager, on busy hotels they can use NGINX Proxy manager
 
-Better support for running ARC or any other emulator as a Linux service
+:punch: Better support for running ARC or any other emulator as a Linux service
 
-We see much better performance on Linux than on Windows, especially the CMS
+:speedboat: We see much better performance on Linux than on Windows, especially the CMS
 
-Opensource, so there are many more resources available to tune the Kernel / TCP Stack.
+:open_hands: Opensource, so there are many more resources available to tune the Kernel / TCP Stack.
 
 :euro: And ofcourse cheaper as we do not need a windows license!
 
