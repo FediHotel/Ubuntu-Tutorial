@@ -114,7 +114,7 @@ server {
         autoindex off;
         server_tokens off;
         add_header X-Frame-Options SAMEORIGIN;
-        add_header OrionCMS "This is an SpongeBob server";
+        add_header AtomCMS "This is an SpongeBob server";
         add_header X-Content-Type-Options "nosniff" always;
         add_header Referrer-Policy "strict-origin-when-cross-origin";
         add_header X-XSS-Protection "1; mode=block";
