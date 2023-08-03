@@ -3,7 +3,7 @@ AtomCMS Setup - Linux NGINX latest mainline version
 ```
 cd /var/www/
 rm -r html
-git clone https://github.com/ObjectRetros/atomcms.git
+git clone https://github.com/billsonnn/nitro-react.git
 cd atomcms
 cp .env.example .env
 ```
