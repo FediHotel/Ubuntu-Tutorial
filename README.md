@@ -1,5 +1,5 @@
 # Install Ubuntu 22.04 Server with AtomCMS / Arcturus / Nitro Client and Imager
-Download link : https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-live-server-amd64.iso for Ubuntu 22.04 **jammy**
+Download link : https://ubuntu.com/download/server for Ubuntu 22.04 **jammy**
 
 ### In this tutorial we will be using an Ubuntu server 22.04 with NGINX.  
 - We will setup the emulator as a service, therefore no action is required after an reboot.
