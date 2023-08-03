@@ -58,7 +58,18 @@ location /imaging/ {
 * if you have nginx setup and the docker is running, you can test it by using the follwing URL : https://##YOUR DOMAIN##/imaging/?figure=ha-1003-88.lg-285-89.ch-3032-1334-109.sh-3016-110.hd-180-1359.ca-3225-110-62.wa-3264-62-62.hr-891-1342.0;action=std&gesture=sml&direction=2&head_direction=2amp;img_format=png&gesture=srp&headonly=1&size=l
 
 # Setup the Webproxy
-To be continued
+
+add the following before location ~ \.php$ {
+```vi /etc/nginx/sites-available/cms.conf```
+paste :
+```
+ location /imaging/ {
+        proxy_pass http://172.38.0.2:3031;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+```
 
 # Setup Gamedata  
 
