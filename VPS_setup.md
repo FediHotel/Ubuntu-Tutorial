@@ -24,7 +24,7 @@ We will be installing the following on the system.
 
 :point_right: Setup the infra for AtomCMS
 
-:point_right: We are going to install all the requirements for the AtomCMS, and also make it ready for any kind of Habbo Emulator. The following is a requirement on your local laptop/desktop:
+:point_right: The following is a requirement on your local laptop/desktop:
 
 :star: SSH client, for this I do recommend MobaXterm https://mobaxterm.mobatek.net/download.html this is a free version
 
