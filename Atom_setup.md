@@ -169,7 +169,7 @@ echo "" >> $CLOUDFLARE_FILE_PATH;
 echo "real_ip_header CF-Connecting-IP;" >> $CLOUDFLARE_FILE_PATH;
 echo "add_header CF-IPCountry $http_cf_connecting_ip always;" >> $CLOUDFLARE_FILE_PATH;
 #test configuration and reload nginx
-#nginx -t && systemctl reload nginx
+nginx -t && systemctl reload nginx
 ```
 
 Now make it executable and run the script
