@@ -53,7 +53,7 @@ rm sites-enabled/default
 vi /etc/nginx/nginx.conf
 ```
 
-Paste the following in the nginx.comf (First press the letter i before pasting you will see in the left corner the text -- INSERT --)
+Paste the following in the nginx.conf (First press the letter i before pasting you will see in the left corner the text -- INSERT --)
 
 ```
 user www-data;
