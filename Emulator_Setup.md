@@ -80,10 +80,6 @@ And only use this if you imported the database as described in the CMS setup!
 ```mysql
 mariadb
 USE #yourdatabase#;
-```
-Now to goto : [Emulator SQL File](https://git.krews.org/duckietm/ubuntu-tutorial/-/blob/main/Emulator_Compiled/Emulator.sql)  
-Copy and paste the following (press **a** before pasteing) in the console  
-**If you do not use this SQL, because you import your own one, this is required !!!!**  
 ```UPDATE emulator_settings SET value='0' WHERE  `key`='console.mode';```
 So the console.mode needs to be 0  
 
