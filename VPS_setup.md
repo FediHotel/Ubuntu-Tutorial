@@ -16,10 +16,10 @@ Always keep in mind to use a CDN (Cloudflare / Akamai / Fastly and many more), w
 
 We will be installing the following on the system.
 
-- NGINX (high-performance webserver)
-- MariaDB 10.11 latest stable version, please do not install version 11 as this can cause problems with the emulators at the moment
-- Setup the infra for AtomCMS
-- We are going to install all the requirements for the AtomCMS, and also make it ready for any kind of Habbo Emulator. The following is a requirement on your local laptop/desktop:
+:point_right: NGINX (high-performance webserver)
+:point_right: MariaDB 10.11 latest stable version, please do not install version 11 as this can cause problems with the emulators at the moment
+:point_right: Setup the infra for AtomCMS
+:point_right: We are going to install all the requirements for the AtomCMS, and also make it ready for any kind of Habbo Emulator. The following is a requirement on your local laptop/desktop:
 
 * SSH client, for this I do recommend MobaXterm https://mobaxterm.mobatek.net/download.html this is a free version
 * MySQL Workbench, for this I recommend using Heidi (make it yourself easy don't use a pirated copy of Navicat, this is just bad software and a lot of cracked versions come with spyware) https://www.heidisql.com/
