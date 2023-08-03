@@ -1,18 +1,25 @@
-Install a fresh copy of Ubuntu Server (22.04 is the current stable release and will be used) on your VPS/Server or use it on your Windows (WSL) More info on how to install WSL on Windows can be found here: https://learn.microsoft.com/en-us/windows/wsl/install For running a Retro hotel I do recommend using a Linux operating system as this has more advantages than the Windows platform. Example :
+Install a fresh copy of Ubuntu Server (22.04 is the current stable release and will be used) on your VPS/Server or use it on your Windows (WSL)
+
+More info on how to install WSL on Windows can be found here: https://learn.microsoft.com/en-us/windows/wsl/install For running a Retro hotel I do recommend using a Linux operating system as this has more advantages than the Windows platform. Example :
 
 NGINX is built for Linux systems and has been ported to Windows but will perform less due to the file system.
+
 Running Linux dockers to add functions like the habbo imager, on busy hotels NGINX Proxy manager
+
 Better support for running ARC or any other emulator as a Linux service
+
 We see much better performance on Linux than on Windows, especially the CMS
+
 Opensource, so there are many more resources available to tune the Kernel / TCP Stack.
+
 Always keep in mind to use a CDN (Cloudflare / Akamai / Fastly and many more), we advise you to start with Cloudflare and use the Free version to start. When your hotel is >50 users online then start thinking about Cloudflare Pro or a better fit to your needs. Some advise never to use the "Cloudflare Zero Trust" option to reach your VPS, as this will NOT protect you when using the Cloudflare Proxy option. This is however a nice feature, but this is for a Home NAS / Application like Home Assist etc. but never for a production system!
 
 We will be installing the following on the system.
 
-NGINX (high-performance webserver)
-MariaDB 10.11 latest stable version, please do not install version 11 as this can cause problems with the emulators at the moment
-Setup the infra for AtomCMS
-We are going to install all the requirements for the AtomCMS, and also make it ready for any kind of Habbo Emulator. The following is a requirement on your local laptop/desktop:
+- NGINX (high-performance webserver)
+- MariaDB 10.11 latest stable version, please do not install version 11 as this can cause problems with the emulators at the moment
+- Setup the infra for AtomCMS
+- We are going to install all the requirements for the AtomCMS, and also make it ready for any kind of Habbo Emulator. The following is a requirement on your local laptop/desktop:
 
 SSH client, for this I do recommend MobaXterm https://mobaxterm.mobatek.net/download.html this is a free version
 MySQL Workbench, for this I recommend using Heidi (make it yourself easy don't use a pirated copy of Navicat, this is just bad software and a lot of cracked versions come with spyware) https://www.heidisql.com/
