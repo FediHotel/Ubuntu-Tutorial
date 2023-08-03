@@ -32,7 +32,7 @@ We will be installing the following on the system.
 
 :vhs: WinSCP, a free tool to quickly transfer files from your machine to the server https://winscp.net/eng/download.php
 
-NGINX
+##NGINX
 ```
 apt install curl gnupg2 ca-certificates lsb-release dirmngr software-properties-common apt-transport-https -y
 curl -fSsL https://nginx.org/keys/nginx_signing.key | sudo gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
@@ -46,14 +46,14 @@ apt install nginx -y
 
 When there are popup screens just press OK :white_square_button:
 
-NGINX PHP-FPM 8.2
+##NGINX PHP-FPM 8.2
 ```
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt install php8.2-fpm php8.2 php8.2-common php8.2-mysql php8.2-xml php8.2-xmlrpc php8.2-curl php8.2-gd php8.2-imagick php8.2-cli php8.2-imap php8.2-mbstring php8.2-opcache php8.2-soap php8.2-zip php8.2-intl php8.2-bcmath unzip -y
 ```
 When there are popup screens just press OK :white_square_button:
 
-MariaDB
+##MariaDB
 ```
 apt-get install apt-transport-https curl -y
 mkdir -p /etc/apt/keyrings
@@ -88,12 +88,12 @@ When there are popup screens just press OK :white_square_button:
 
 Setup Database and secure your server
 
-SSH Security
+##SSH Security
 First, we want to secure the server by removing password authentication and using KEY authentication with your own password.
 We will also use the same key to get connected to the Database, this way only the SSH port needs to be open to the internet and port 3306 will not be needed.
 Therefore way more secure and also much better to maintain, by just adding a key the user will get access.
 
-Step 1 :
+###Step 1 :
 Open MobaXterm
 
 In the window select Tools (this is on top in the menu section)
@@ -112,18 +112,23 @@ Press the "Save private key" button and save this in the same location as the pu
 
 Login to Your VPS/Server and we are going to set the SSH key, I will set it as root user this can of course can also be done for normal user accounts
 
-Step 2 :
+###Step 2 :
 ```vi /root/.ssh/authorized_keys```
 Paste the content of the Public.key into the editor (First press the letter i before pasting you will see in the left corner the text -- INSERT --)
+
 When pasted press [ESC] then type :wq <-- make sure that there are no capitals
-run the following command service ssh restart
 
-Step 3 :
-Now we will test the use of the SSHkey before we make the SSH secure as we do not want to lose access to the server :) Open the MobaXterm and duplicate your current server so you get a copy of the server. Now edit the settings by right click the newly copied and selecting "Edit settings" In the Session settings screen now select "Advanced SSH settings" and enable "Use Private key" After this, you can select the file "C:\Key\Privatekey.pkk" in the "Use private key" field When you have selected it press OK
+run the following command: ```service ssh restart```
 
-Now use the newly copied object that will connect to your server using the SSHKey, you will be prompted for username "root" and password "This is the password that you have set in the generate of the key so not the server password" When this is connected then all went well if not you did something wrong and need fixing before continuing.
+###Step 3 :
+Now we will test the use of the SSHkey before we make the SSH secure as we do not want to lose access to the server :)
+Open the MobaXterm and duplicate your current server so you get a copy of the server.
+Now edit the settings by right click the newly copied and selecting "Edit settings" In the Session settings screen now select "Advanced SSH settings" and enable "Use Private key" After this, you can select the file "C:\Key\Privatekey.pkk" in the "Use private key" field When you have selected it press OK :white_square_button:
 
-Step 3 :
+Now use the newly copied object that will connect to your server using the SSHKey, you will be prompted for username "root" and password "
+This is the password that you have set in the generate of the key so not the server password" When this is connected then all went well if not you did something wrong and need fixing before continuing.
+
+###Step 4 :
 Connect now with your newly created SSH session and use the Key (remove the old one!)
 ```
 >/etc/ssh/sshd_config
@@ -144,7 +149,7 @@ When pasted press [ESC] then type :wq <-- make sure that there are no capitals
 
 now reboot the server by the command: reboot And always make a backup of both keys in a secure place, because if you lose the keys there is no way to get access remote to the server !!! Your only option then is by using a VNC / Terminal / KVM etc.
 
-Database setup
+###Database setup
 First, we need to finalize the setup of MariaDB.
 ```
 mariadb-secure-installation
