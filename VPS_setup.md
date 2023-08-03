@@ -44,7 +44,7 @@ apt install nginx-common -y
 apt install nginx -y
 ```
 
-When there are popup screens just press OK
+When there are popup screens just press OK :white_square_button:
 
 NGINX PHP-FPM 8.2
 ```
