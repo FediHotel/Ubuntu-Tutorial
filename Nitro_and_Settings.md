@@ -149,39 +149,29 @@ Make sure your sso ticket is valid and that you didn't do an IP ban before confi
 
 # Last part make the Virtual Directories
 
-Open a browser and go to the litespeed admin page : https://1.2.3.4:7080 and login with your admin credentials  
-- Navigate to : Virtual Hosts  
-- View the retrohotel in the action field
-- Navigate to context in the top nagigation
-- In the Context List bar press the + on the right side
-- select ``` Type: Static ``` and press next in the New Context bar on the right
-- make the following changes :
-```text 
-URI : /client/
-Location : /var/www/retrohotel/Client
-Accessible * : Yes
-Index Files : index.html
-Access Allowed : *
-Enable Rewrite : no
-Rewrite Inherit : no
-```
-Now press Save in the Static Context Definition on the right side  
-Repeat the proccess
-- In the Context List bar press the + on the right side
-- select ``` Type: Static ``` and press next in the New Context bar on the right
-- make the following changes :
-```text 
-URI : /gamedata/
-Location : /var/www/retrohotel/Gamedata
-Accessible * : Yes
-Index Files : index.html
-Access Allowed : *
-Enable Rewrite : no
-Rewrite Inherit : no
-```
-Now press Save in the Static Context Definition on the right side
+```vi /etc/nginx/sites-available/cms.conf```
 
-Restart your server and that should be it !!!!!!
+and add make it the folowing (this needs to be added so not copy and paste) after the :
+```
+location / {
+        try_files $uri $uri/ /index.php?$query_string;
+        autoindex off;
+        }
+```
+Paste:
+```
+        location /client {
+        limit_conn addr 10;
+        alias /var/www/atomcms/Client;
+        autoindex off;
+        }
+
+        location /gamedata {
+        alias /var/www/atomcms/Gamedata;
+        access_log off;
+        autoindex off;
+        }
+```
 
 To debug open Chrome and press F12, in the debug menu select console 
 for example : ```WebSocket connection to 'wss://sockets.yourdmain.com:2096/' failed: ``` there is an error connecting to the websocket.  
