@@ -1,4 +1,4 @@
-# Install Ubuntu 22.04 Server with Cosmic / Arcturus / Nitro Client and Imager
+# Install Ubuntu 22.04 Server with AtomCMS / Arcturus / Nitro Client and Imager
 Download link : https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-live-server-amd64.iso for Ubuntu 22.04 **jammy**
 
 ### In this tutorial we will be using an Ubuntu server 22.04 with NGINX.  
@@ -16,9 +16,8 @@ When starting from scratch, this would be the recomended order :
 3. Imager and Gamedata setup  
 4. Cloudflare and SSL setup  
 5. Cloudlfare RealIP setup  
-6. Cosmic badge system setup  
-7. Emulator setup  
-8. Nitro and settings setup  
+6. Emulator setup  
+6. Nitro and settings setup  
 
 **Big Thanks to:**  
 Dennis⚡(Object) (Atom CMS)  
