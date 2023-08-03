@@ -1,5 +1,4 @@
-# Litespeed and Cloudflare setup
-In OpenLiteSpeed web server, setting up a SSL certificate for a domain is a bit tricky.  
+# NGINX and Cloudflare setup
 In this article I will show how to setup Cloudflare’s free SSL certificate for a domain name.  
 Before we begin, make sure that your domain is using Cloudflare’s DNS.  
 
@@ -7,7 +6,7 @@ Before we begin, make sure that your domain is using Cloudflare’s DNS.
 
 1. Login to your Cloudflare dashboard and select your domain.  
 
-2. Click on “Crypto” tab and within SSL settings, select “Full (strict)”  
+2. Click on “Crypto” tab and within SSL settings, select “Full”  
 
 3. Scroll down a bit and within “Origin Certificates” settings, click “Create Certificate”  
 
@@ -24,49 +23,22 @@ Create an empty file named “ssl.pem” and paste the copied contents within th
 Follow the similar step for “Private key” and save the file as “ssl.key”
 
 ## Setup Web Server to use generated certificates
-First, transfer those .pem and .key files to /usr/local/lsws/conf/cert directory. (use WINSCP or any other SSH transfer tool)  
+First, transfer those .pem and .key files to /etc/ssl/#website_name# directory. (use WINSCP or any other SSH transfer tool)  
 Now to use those files in our Web Server, we need to configure the SSL settings for port 443 listener.
 
-1. Login to OpenLiteSpeed control panel and navigate to “Listeners” and click “Add”
-Set the following values:
-```text
-Listener name: 443 (or any name)
-IP Address: ANY
-Port: 443
-Secure: Yes
 ```
-Click Save icon  
-
-2. Your newly created listener will be added to listener list.  
-Now click “View” to open the listener  
-
-3. Go to “SSL” tab and click edit  
-Fill out the following values:  
-```text
-Private Key File: /usr/local/lsws/conf/cert/ssl.key
-Certificate FIle: /usr/local/lsws/conf/cert/ssl.pem
-```  
-
-4. Get back to the “SSL” tab and click “Edit” icon in “SSL Protocol” settings  
-Select :  
+vi /etc/nginx/sites-available/cms.conf
 ```
-TLS v1.2
-TLS v1.3      
+and make the followin changes at the begining of the file
 ```
-5. Now head back to the “Listeners” > “General” tab. Under “Virtual Host Mappings”, click “Add”  
-Set “Virtual Host” for your domain and specify the domain name (mydomain.com).  
-Click save icon.
+server {
+        listen 80;
+        listen [::]:80;
+        listen 443 ssl;
+        listen [::]:443 ssl;
+        http2 on;
 
-Change the following to use your own Imager
-```shell
-vi /var/www/retrohotel/CMS/src/App/Config.php
+        ssl_certificate /etc/ssl/#website_name#/cert.pem;
+        ssl_certificate_key /etc/ssl/#website_name#/key.pem;
 ```
-```text
-      "domain"      => "https://###Your Domain or IP###",
-      "cpath"       => "https://###Your Domain or IP###/assets",
-      "fpath"       => "https://###Your Domain or IP###/imaging/",
-      "shortname"   => "Cosmic Test",
-      "sitename"    => "Cosmic Test"
-```
-
-Reboot your server and test it out!
+run : ```nginx -t``` to see if there are any errors if not reboot and off you go
