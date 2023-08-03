@@ -89,17 +89,27 @@ When there are popup screens just press OK :white_square_button:
 Setup Database and secure your server
 
 SSH Security
-First, we want to secure the server by removing password authentication and using KEY authentication with your own password. We will also use the same key to get connected to the Database, this way only the SSH port needs to be open to the internet and port 3306 will not be needed. Therefore way more secure and also much better to maintain, by just adding a key the user will get access.
+First, we want to secure the server by removing password authentication and using KEY authentication with your own password.
+We will also use the same key to get connected to the Database, this way only the SSH port needs to be open to the internet and port 3306 will not be needed.
+Therefore way more secure and also much better to maintain, by just adding a key the user will get access.
 
 Step 1 :
 Open MobaXterm
+
 In the window select Tools (this is on top in the menu section)
+
 Select "MobaKeyGen (SSH Key generator)"
+
 Select Generate <-- Move your mouse until the generate is complete
+
 Copy the content of the key to a file on your PC/Laptop example (don't press the Save public key this will not work!) create a file C:\Key\Public.key and then paste the content (like this below)
+```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJXTjI5gozMN8XmFwIdC76h8zv/tDc5l5kLNdaplEgpRtcrVj+zJZ1/IT/L1gUWGZbrat/UoCD0eIdXi5o7GwXrBszkIoQA26GN5MNmvZU/JQSWDwfaXzCI1rYnZxXCXf+eRThBfdW8rHzXEiG9bvsq9ppz7T75pB5Pv6Qem/lzuiUm3wbvh4wpCkMkBDLepyAXOBGu4T+sARCPkoW4In4fP1pMzzkRqMhXCLnFPhqY692kSsChXbeIeuVls5iBnf55jM5ZJKIOFebdxZNoSkb4/nq7VepzrByWeoYcjfZM8/ZjZ0EBd8DmFgpTD0AQBqwc3oZUo+sikyFoFUDkJNp rsa-key-20230711
+```
 Enter a password in "Key passphrase" and the same password in "Confirm passphrase" <-- VERY IMPORTANT
+
 Press the "Save private key" button and save this in the same location as the public.key c:\Key\Privatekey.pkk
+
 Login to Your VPS/Server and we are going to set the SSH key, I will set it as root user this can of course can also be done for normal user accounts
 
 Step 2 :
