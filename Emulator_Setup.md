@@ -1,10 +1,8 @@
 # Setup the Arcturus Morningstar emulator  
 
 Before continue make sure you have the CMS installed and verify that it is running.  
-In this setup we will setup the emulator with the webkit plugin and websocket plugin.  
 
-download : [Arcturus Morningstar Compiled Download](https://git.krews.org/duckietm/ubuntu-tutorial/-/tree/main/Emulator_Compiled#modal-upload-blob) Emulator or the latest version  version from : [Arcturus Morningstar](https://git.krews.org/morningstar/Arcturus-Community/-/tree/dev)  
-This version is up to commit 06969df0 / 28-03-2022 from the DEV branch.  
+download : Emulator_Compiled or use the the latest version  version from : [Arcturus Morningstar](https://git.krews.org/morningstar/Arcturus-Community/-/tree/dev)  
 For this you can find more info on the main site : [Arcturus Morningstar](https://git.krews.org/morningstar/Arcturus-Community/-/tree/master) and on Discord : [discord](https://discord.gg/BzfFsTp)  
 
 ```shell
