@@ -26,7 +26,7 @@ TheGeneral (Initial base DB)
 TenShie (Crackables, Soundtracks, Crafting, TargedOffers, Roombundles, Calendar)  
 Skeletor for the group bagde imager  
 
-:white_check_mark: Setup VPS / Atom / Arcturus Database / Custom Catalog : 100%  
+:white_check_mark: Setup VPS / Atom / Arcturus Database : 100%  
 :white_check_mark: Imager : 100%  
 :white_check_mark: Cloudflare and SSL : 100%  
 :white_check_mark: Emulator : 100%  
