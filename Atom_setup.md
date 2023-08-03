@@ -123,8 +123,10 @@ server {
         
         access_log /var/log/nginx/cms.log custom;
         error_log /var/log/nginx/cms_error.log;
+
         server_name ###URL###;
-        root /var/www/orioncms/public;
+        
+        root /var/www/atomcms/public;
         index index.php index.html index.htm;
         location / {
         try_files $uri $uri/ /index.php?$query_string;
