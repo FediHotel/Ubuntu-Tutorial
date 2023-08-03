@@ -3,7 +3,7 @@ Before continue make sure you have the CMS installed and verify that it is runni
 
 ## Nitro Imager with Node V19
 
-Copy the content to example : /docker/nitro_imager
+Copy the content to example : /docker/nitro_imager you will find this in the Docker folder
 
 Change the /docker/nitro_imager/.env
 
