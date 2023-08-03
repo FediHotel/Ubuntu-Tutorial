@@ -4,13 +4,15 @@ More info on how to install WSL on Windows can be found here: https://learn.micr
 
 NGINX is built for Linux systems and has been ported to Windows but will perform less due to the file system.
 
-Running Linux dockers to add functions like the habbo imager, on busy hotels NGINX Proxy manager
+Running Linux dockers to add functions like the habbo imager, on busy hotels they can use NGINX Proxy manager
 
 Better support for running ARC or any other emulator as a Linux service
 
 We see much better performance on Linux than on Windows, especially the CMS
 
 Opensource, so there are many more resources available to tune the Kernel / TCP Stack.
+
+:euro: And ofcourse cheaper as we do not need a windows license!
 
 Always keep in mind to use a CDN (Cloudflare / Akamai / Fastly and many more), we advise you to start with Cloudflare and use the Free version to start. When your hotel is >50 users online then start thinking about Cloudflare Pro or a better fit to your needs. Some advise never to use the "Cloudflare Zero Trust" option to reach your VPS, as this will NOT protect you when using the Cloudflare Proxy option. This is however a nice feature, but this is for a Home NAS / Application like Home Assist etc. but never for a production system!
 
