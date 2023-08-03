@@ -51,7 +51,7 @@ NGINX PHP-FPM 8.2
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt install php8.2-fpm php8.2 php8.2-common php8.2-mysql php8.2-xml php8.2-xmlrpc php8.2-curl php8.2-gd php8.2-imagick php8.2-cli php8.2-imap php8.2-mbstring php8.2-opcache php8.2-soap php8.2-zip php8.2-intl php8.2-bcmath unzip -y
 ```
-When there are popup screens just press OK
+When there are popup screens just press OK :white_square_button:
 
 MariaDB
 ```
@@ -59,7 +59,7 @@ apt-get install apt-transport-https curl -y
 mkdir -p /etc/apt/keyrings
 curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
 ```
-When there are popup screens just press OK
+When there are popup screens just press OK :white_square_button:
 
 create the following file: vi /etc/apt/sources.list.d/mariadb.sources (First press the letter i before paste you will the see in the left corner the text -- INSERT --)
 ```
@@ -84,7 +84,7 @@ apt install nodejs -y
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/bin --filename=composer
 ```
-When there are popup screens just press OK
+When there are popup screens just press OK :white_square_button:
 
 Setup Database and secure your server
 
