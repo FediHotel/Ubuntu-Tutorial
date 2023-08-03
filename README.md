@@ -8,7 +8,7 @@ So, in the end, this will:
 
 * Lower on hardware usage, also saving server costs.
 * Lower on server costs, due to the fact no Windows license is required.
-* Greater website perfomance in comparison to IIS, Apache and NGINX.
+* Greater website perfomance in comparison to IIS, Apache and others.
 
 When starting from scratch, this would be the recomended order :
 1. VPS Setup

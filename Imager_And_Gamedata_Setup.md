@@ -1,20 +1,64 @@
 # Setup the Nitro Imager, this will render all the avatars from your reposotory  
 Before continue make sure you have the CMS installed and verify that it is running  
 
-## Setup the Imager
-```shell
-mkdir /var/www/retrohotel/Gamedata
-git clone https://git.krews.org/nitro/nitro-imager.git /var/www/retrohotel/Imager
-mkdir /var/www/retrohotel/Imager/saved_figure
+## Nitro Imager with Node V19
+
+Copy the content to example : /docker/nitro_imager
+
+Change the /docker/nitro_imager/.env
+
+Let say your content is (clothes & config) in :/var/www/XXX/XXX/XXX then change the path in the .env file
+But if you host your CMS on a other server you can replace the absoulte path with url paths as well.
+
+Example :
+```env
+API_HOST=imager
+API_PORT=3030
+AVATAR_SAVE_PATH=/src/saved_figure
+AVATAR_ACTIONS_URL=/var/www/Gamedata/config/HabboAvatarActions.json
+AVATAR_FIGUREDATA_URL=/var/www/Gamedata/config/FigureData.json
+AVATAR_FIGUREMAP_URL=/var/www/Gamedata/config/FigureMap.json
+AVATAR_EFFECTMAP_URL=/var/Gamedata/config/EffectMap.json
+AVATAR_ASSET_URL=/var/www/Gamedata/clothes/%libname%.nitro
 ```
-```shell
-vi /var/www/retrohotel/Imager/src/app/router/HttpRouter.ts
-````
-Replace:  
-```HttpRouter.use('/', HabboImagingRouter);```  
-With:  
-```HttpRouter.use('/imaging', HabboImagingRouter);```  
-to save type ":wq!"   <-- no quotes
+Next make the path avalibe in /docker/nitro_imager/docker-compose.yml
+
+Example:
+
+```yml
+services:
+  nodejs:
+    container_name: imager
+    build:
+      context: ./
+      target: imager
+    volumes:
+      - ./imager:/src
+      - /var/www:/var/www # Path to your data
+    command: sh -c "npm run start" # Change this after the first startup of the docker !
+    tty: true
+```
+
+Now you can run : docker-compose up -d 
+
+and this will build and make the imager avalible on port 3030
+
+to use it use the following in nginx:
+
+```
+location /imaging/ {
+        proxy_pass http://172.38.0.2:3030;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+```
+
+* Don't forget your firewall not to allow access from outside.
+* if you have nginx setup and the docker is running, you can test it by using the follwing URL : https://##YOUR DOMAIN##/imaging/?figure=ha-1003-88.lg-285-89.ch-3032-1334-109.sh-3016-110.hd-180-1359.ca-3225-110-62.wa-3264-62-62.hr-891-1342.0;action=std&gesture=sml&direction=2&head_direction=2amp;img_format=png&gesture=srp&headonly=1&size=l
+
+# Setup the Webproxy
+To be continued
 
 # Setup Gamedata  
 
@@ -76,93 +120,3 @@ If all went fine you should see the following output
 ```
 
 # Setup the Webproxy
-
-Login to : https://1.2.3.4:7080/ where 1.2.3.4 is your IP / hostname  
-Navigate to Server Configuration and select External App in the Top navigation.  
-In the External Applications bar press + to add the proxy server.  
-By Type select : Web Server and press next in the New External App bar  
-```text
-Name                           : Imager
-Address                        : http://localhost:3030
-Max Connections                : 250
-Connection Keep-Alive Timeout  : 10
-Initial Request Timeout (secs) : 10
-Retry Timeout (secs)           : 10
-```
-In the  Web Server bar press save.  
-Navigate to Virtual Hosts and edit the retrohotel  
-In the Virtual Host top menu bar goto Context and press the + in the Context List bar  
-Select Type : Proxy and press next in the New Context bar  
-```text
-URI : /imaging/
-Webserver : Select Imager
-```
-Press save in the Proxy Context Definition bar  
-Now press the gracefull restart button to make the proxy active  
-You can test it out : http://#YOUR URL or IP#/imaging/?figure=hr-890-37.hd-605-8.ch-650-76.lg-715-76.sh-907-71.he-3274-71.fa-3276-1408.ca-1812.wa-2008&direction=2  
-You do need to start the service by : ```npm run start``` in the Imager directory, press CTRL+C when the test is done.  
-When you see the avatar you are ready to go to the next step :)
-
-# Make the imager to run as an service
-
-```shell
-npm install pm2@latest -g
-```
-```shell
-pm2 start /var/www/retrohotel/Imager/dist/index.js
-```
-You will see the following output :
-```text
-┌─────┬──────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
-│ id  │ name     │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
-├─────┼──────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
-│ 0   │ index    │ default     │ 1.0.0   │ fork    │ 18878    │ 0s     │ 0    │ online    │ 0%       │ 32.3mb   │ root     │ disabled │
-└─────┴──────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
-```
-```shell
-pm2 startup systemd
-```
-```shell
-pm2 save
-```
-```shell
-systemctl start pm2-root.service
-```
-```shell
-systemctl status pm2-root.service
-```
-```txt
-Mar 28 09:57:08 yourhost pm2[19075]: [PM2] PM2 Successfully daemonized
-Mar 28 09:57:08 yourhost pm2[19075]: [PM2] Resurrecting
-Mar 28 09:57:08 yourhost pm2[19075]: [PM2] Restoring processes located in /root/.pm2/dump.pm2
-Mar 28 09:57:08 yourhost pm2[19075]: [PM2] Process /var/www/retrohotel/Imager/dist/index.js restored
-Mar 28 09:57:09 yourhost pm2[19075]: ┌─────┬──────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
-Mar 28 09:57:09 yourhost pm2[19075]: │ id  │ name     │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
-Mar 28 09:57:09 yourhost pm2[19075]: ├─────┼──────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
-Mar 28 09:57:09 yourhost pm2[19075]: │ 0   │ index    │ default     │ 1.0.0   │ fork    │ 19111    │ 0s     │ 0    │ online    │ 0%       │ 31.7mb   │ root     │ disabled │
-Mar 28 09:57:09 yourhost pm2[19075]: └─────┴──────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
-Mar 28 09:57:09 yourhost systemd[1]: Started PM2 process manager.
-```
-Now reboot you machine to test the service, and after the reboot run the following :
-```pm2 status```
-```text
-┌─────┬──────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
-│ id  │ name     │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
-├─────┼──────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
-│ 0   │ index    │ default     │ 1.0.0   │ fork    │ 1047     │ 7s     │ 0    │ online    │ 0%       │ 121.6mb  │ root     │ disabled │
-└─────┴──────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
-```
-This means the service is online and up & running, so you can test the url again to make sure.  
-
-```shell
-vi /var/www/retrohotel/CMS/src/App/Config.php
-```
-Change the following to use your own Imager
-```text
-      "domain"      => "http://###Your Domain or IP###",
-      "cpath"       => "http://###Your Domain or IP###/assets",
-      "fpath"       => "http://###Your Domain or IP###/imaging",
-      "shortname"   => "Cosmic Test",
-      "sitename"    => "Cosmic Test"
-```
-And we now have a fully functional auto starting Imager !!! 
