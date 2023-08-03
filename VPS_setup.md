@@ -1,3 +1,5 @@
+# VPS SETUP with UBUNTU Server / NGINX and MariaDB
+
 Install a fresh copy of Ubuntu Server (22.04 is the current stable release and will be used) on your VPS/Server or use it on your Windows (WSL)
 
 More info on how to install WSL on Windows can be found here: https://learn.microsoft.com/en-us/windows/wsl/install For running a Retro hotel I do recommend using a Linux operating system as this has more advantages than the Windows platform. Example :
