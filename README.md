@@ -34,11 +34,6 @@ Skeletor for the group bagde imager
 :white_check_mark: Emulator : 100%  
 :white_check_mark: Nitro setup : 100%
 
-<div>
-<img style="float: left; margin: 0px 0px 15px 15px;" src="https://i.imgur.com/jB0CNUJ.png" width="100" alt="Nitro"/>
-</div>
-<img style="float: left; margin: 0px 0px 15px 15px;" src="https://i.imgur.com/9ePNdJ4.png" width="100" alt="Atom CMS"/>
-</div>
-<div>
-<img style="float: left; margin: 0px 0px 15px 15px;" src="https://git.krews.org/uploads/-/system/appearance/header_logo/1/logo3.png" width="100" alt="Krews"/>
+<div align="center">
+<img src="https://i.imgur.com/Lzgqaei.png" alt="Logo"/>
 </div>
