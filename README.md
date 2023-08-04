@@ -31,3 +31,7 @@ Skeletor for the group bagde imager
 :white_check_mark: Cloudflare and SSL : 100%  
 :white_check_mark: Emulator : 100%  
 :white_check_mark: Nitro setup : 100%
+
+<div align="center">
+<img src="https://i.imgur.com/9ePNdJ4.png" alt="Atom CMS"/>
+</div>
