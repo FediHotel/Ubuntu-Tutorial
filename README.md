@@ -33,6 +33,6 @@ Skeletor for the group bagde imager
 :white_check_mark: Nitro setup : 100%
 
 <div align="center">
-<img src="https://imgur.com/a/UXGJm5R.png" alt="Nitro" />
+<img src="https://i.imgur.com/jB0CNUJ.png" alt="Nitro" />
 <img src="https://i.imgur.com/9ePNdJ4.png" alt="Atom CMS"/>
 </div>
