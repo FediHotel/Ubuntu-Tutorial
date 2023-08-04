@@ -18,7 +18,7 @@ When starting from scratch, this would be the recomended order :
 5. Emulator setup  
 6. Nitro and settings setup
 
-The only action you need to do is get a full pack of the c_images
+#### The only action you need to do is get a full pack of the c_images
 
 **Big Thanks to:**  
 Dennis⚡(Object) (Atom CMS)  
