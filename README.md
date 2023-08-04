@@ -32,7 +32,7 @@ Skeletor for the group bagde imager
 :white_check_mark: Emulator : 100%  
 :white_check_mark: Nitro setup : 100%
 
-<div align="center">
-<img src="https://i.imgur.com/jB0CNUJ.png" alt="Nitro" />
-<img src="https://i.imgur.com/9ePNdJ4.png" alt="Atom CMS"/>
+<div>
+<img style='float:left;' src="https://i.imgur.com/jB0CNUJ.png" alt="Nitro" />
+<img style='float:right;'src="https://i.imgur.com/9ePNdJ4.png" alt="Atom CMS"/>
 </div>
