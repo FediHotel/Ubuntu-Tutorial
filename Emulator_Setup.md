@@ -12,10 +12,10 @@ Now set your timezone in this menu and write this down.
 In my case : ```Current default time zone: 'Europe/Amsterdam' ```
 
 ```shell
-mkdir /var/www/retrohotel/Emulator
+mkdir /var/www/Emulator
 apt install default-jre -y
 ```
-Copy the following to the /var/www/retrohotel/Emulator using WINSCP or any other tool, this is in the emulator.zip
+Copy the following to the /var/www/Emulator using WINSCP or any other tool, this is in the emulator.zip (or ofcourse upoad your own Emu that is prefert)
 ```dir
 plugins <-- Direcory
 config.ini
@@ -24,7 +24,7 @@ emulator_28032022.jar
 
 Edit the config.ini to the following:
 ```shell
-cd /var/www/retrohotel/Emulator
+cd /var/www/Emulator
 vi config.ini
 ```
 ```ini
@@ -62,7 +62,7 @@ vi emulator
 paste the following (press **a** before pasting)
 ```
 #!/bin/sh
-java -Dfile.encoding=UTF8 -Xmx4096m -jar /var/www/retrohotel/Emulator/emulator_28032022.jar >/var/log/emulator.log
+java -Dfile.encoding=UTF8 -Xmx4096m -jar /var/www/Emulator/emulator_28032022.jar >/var/log/emulator.log
 ```
 Please note : -Xmx4096m here we give the emulator to use 4GB of mem. you can set this to any amount you want in MB  
 - 1GB = 1024
@@ -82,22 +82,22 @@ USE #yourdatabase#;
 So the console.mode needs to be 0  
 
 ```shell
-vi /etc/systemd/system/retrohotel.emulator.service
+vi /etc/systemd/system/emulator.service
 ```
 Copy and paste the following (press **a** before pasting)
 ```bash
 [Unit]
-Description=retrohotel Emulator
+Description=Morningstar Emulator
 [Service]
 User=root
 # The configuration file application.properties should be here:
 
 #change this to your workspace
-WorkingDirectory=/var/www/retrohotel/Emulator
+WorkingDirectory=/var/www/Emulator
 
 #path to executable.
 #executable is a bash script which calls jar file
-ExecStart=/var/www/retrohotel/Emulator/emulator
+ExecStart=/var/www/Emulator/emulator
 
 SuccessExitStatus=143
 TimeoutStopSec=10
@@ -110,13 +110,13 @@ WantedBy=multi-user.target
 to save type ":wq!"   <-- no quotes
 Before we enable the service test the emulator by using the following cmd:
 ```cmd
-java -Dfile.encoding=UTF8 -Xmx4096m -jar /var/www/retrohotel/Emulator/emulator_28032022.jar
+java -Dfile.encoding=UTF8 -Xmx4096m -jar /var/www/Emulator/emulator_28032022.jar
 ```
 Once it is has all started you are almost ready to go.  
 Press CTRL+C to exit the emulator  
 ```shell
-systemctl enable retrohotel.emulator.service
-systemctl start retrohotel.emulator.service
+systemctl enable emulator.service
+systemctl start emulator.service
 ```
 see if all has started by using the : ```cat /var/log/emulator.log```
 - To stop the emulator : ```systemctl stop retrohotel.emulator.service```
@@ -134,6 +134,4 @@ Dont forget when the emu is running you can test out :
 Recourses :
 
 - Emulator (https://git.krews.org/morningstar/Arcturus-Community/-/tree/dev)
-- Webkit plugin (https://git.krews.org/Raizer/cosmic-assets/-/tree/master/Plugin)
 - Nitro Websocket (https://git.krews.org/nitro/ms-websockets)
-
