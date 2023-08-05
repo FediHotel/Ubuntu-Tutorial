@@ -120,7 +120,7 @@ systemctl enable emulator.service
 systemctl start emulator.service
 ```
 see if all has started by using the : ```cat /var/log/emulator.log```
-- To stop the emulator : ```systemctl stop retrohotel.emulator.service```
+- To stop the emulator : ```systemctl stop emulator.service```
 - To debug the log : ```tail -f /var/log/emulator.log``` <-- To end press CTRL+C
 
 Now you can test it out by doing an reboot and see if the emulator start when rebooted:
