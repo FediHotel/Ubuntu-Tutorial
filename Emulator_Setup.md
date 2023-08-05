@@ -110,6 +110,7 @@ RestartSec=5
 WantedBy=multi-user.target
 ```  
 to save type ":wq!"   <-- no quotes
+
 Before we enable the service test the emulator by using the following cmd:
 ```cmd
 java -Dfile.encoding=UTF8 -Xmx4096m -jar /var/www/Emulator/emulator_28032022.jar
