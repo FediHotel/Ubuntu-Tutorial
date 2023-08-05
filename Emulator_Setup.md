@@ -78,7 +78,8 @@ And only use this if you imported the database as described in the CMS setup!
 ```mysql
 mariadb
 USE #yourdatabase#;
-```UPDATE emulator_settings SET value='0' WHERE  `key`='console.mode';```
+UPDATE emulator_settings SET value='0' WHERE  `key`='console.mode';
+```
 So the console.mode needs to be 0  
 
 ```shell
