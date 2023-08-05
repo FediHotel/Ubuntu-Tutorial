@@ -47,7 +47,7 @@ game.port=3000
 #RCON Configuration.
 rcon.host=0.0.0.0
 rcon.port=3001
-rcon.allowed=127.0.0.1;192.168.0.8;192.168.0.7
+rcon.allowed=127.0.0.1
 
 encryption.forced=true
 #Encryption for your Hotel Only Use it if you know WTF you doin'.
