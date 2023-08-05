@@ -130,7 +130,6 @@ reboot
 ```
 
 That is all folks your Emulator is up and running !!!  
-Dont forget when the emu is running you can test out : 
 
 Recourses :
 
