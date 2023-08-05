@@ -3,6 +3,7 @@
 Before continue make sure you have the CMS installed and verify that it is running.  
 
 download : Emulator_Compiled or use the the latest version  version from : [Arcturus Morningstar](https://git.krews.org/morningstar/Arcturus-Community/-/tree/dev) <-- This is the recommended way compile the latest emulator yourself!
+
 For this you can find more info on the main site : [Arcturus Morningstar](https://git.krews.org/morningstar/Arcturus-Community/-/tree/master) and on Discord : [discord](https://discord.gg/BzfFsTp)  
 
 ```shell
