@@ -22,7 +22,7 @@ We will be installing the following on the system.
 
 :point_right: NGINX (high-performance webserver)
 
-:point_right: MariaDB 10.11 latest stable version, please do not install version 11 as this can cause problems with the emulators at the moment
+:point_right: MariaDB 11.0 latest stable version, look in the FAQ of the Krews DC to update the tables to use MariaDB 11
 
 :point_right: Setup the infra for AtomCMS
 
@@ -65,13 +65,13 @@ When there are popup screens just press OK :white_square_button:
 
 create the following file: vi /etc/apt/sources.list.d/mariadb.sources (First press the letter i before paste you will the see in the left corner the text -- INSERT --)
 ```
-# MariaDB 10.11 repository list - created 2023-07-11 05:47 UTC
+# MariaDB 11.0 repository list - created 2023-08-05 11:18 UTC
 # https://mariadb.org/download/
 X-Repolib-Name: MariaDB
 Types: deb
 # deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.
-# URIs: https://deb.mariadb.org/10.11/ubuntu
-URIs: https://mirrors.xtom.de/mariadb/repo/10.11/ubuntu
+# URIs: https://deb.mariadb.org/11.0/ubuntu
+URIs: https://ftp.nluug.nl/db/mariadb/repo/11.0/ubuntu
 Suites: jammy
 Components: main main/debug
 Signed-By: /etc/apt/keyrings/mariadb-keyring.pgp
@@ -134,9 +134,10 @@ This is the password that you have set in the generate of the key so not the ser
 
 ### Step 4 :
 Connect now with your newly created SSH session and use the Key (remove the old one!)
-```
+
 >/etc/ssh/sshd_config
 vi /etc/ssh/sshd_config paste the following into the sshd_config (First press the letter i before pasting you will see in the left corner the text -- INSERT --)
+```
 Include /etc/ssh/sshd_config.d/*.conf
 Port 22
 PermitRootLogin yes
