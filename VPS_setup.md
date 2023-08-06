@@ -135,8 +135,11 @@ This is the password that you have set in the generate of the key so not the ser
 ### Step 4 :
 Connect now with your newly created SSH session and use the Key (remove the old one!)
 
+```
 >/etc/ssh/sshd_config
-vi /etc/ssh/sshd_config paste the following into the sshd_config (First press the letter i before pasting you will see in the left corner the text -- INSERT --)
+vi /etc/ssh/sshd_config 
+```
+paste the following into the sshd_config (First press the letter i before pasting you will see in the left corner the text -- INSERT --)
 ```
 Include /etc/ssh/sshd_config.d/*.conf
 Port 22
